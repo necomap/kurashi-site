@@ -1,0 +1,16 @@
+{
+  "name": "kurashi-site",
+  "version": "1.0.0",
+  "description": "ねこと緑のくらし工房",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "preview": "npx --yes serve dist -l 4321"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "marked": "^18.2.0"
+  },
+  "private": true,
+  "type": "module"
+}

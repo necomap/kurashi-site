@@ -1,0 +1,72 @@
+:root{
+  --bg:#f7f3ea; --paper:#fffdf8; --ink:#3b3a36; --muted:#7a776e;
+  --green:#5b7c5a; --green-l:#e6eedf; --accent:#c8734a; --line:#e5dccb;
+  --radius:16px;
+}
+*{box-sizing:border-box}
+html{font-size:16px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif;line-height:1.85;-webkit-text-size-adjust:100%}
+a{color:var(--green)}
+img{max-width:100%;height:auto}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+
+/* header */
+.site-header{background:var(--paper);border-bottom:1px solid var(--line)}
+.site-header>.wrap{padding-top:22px;padding-bottom:10px;text-align:center}
+.logo{font-size:1.6rem;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:.04em}
+.logo-mark{margin-right:.3em}
+.tagline{margin:.2em 0 0;color:var(--muted);font-size:.85rem}
+.cat-nav{border-top:1px dashed var(--line)}
+.cat-nav .wrap{display:flex;gap:6px;overflow-x:auto;padding:10px 20px;justify-content:center;scrollbar-width:none}
+.cat-nav a{white-space:nowrap;text-decoration:none;color:var(--ink);font-size:.9rem;padding:4px 12px;border-radius:999px;background:var(--green-l)}
+.cat-nav a:hover{background:var(--green);color:#fff}
+@media (max-width:700px){.cat-nav .wrap{justify-content:flex-start}}
+
+/* hero */
+.hero{text-align:center;padding:48px 0 24px}
+.hero h1{margin:0;font-size:1.8rem;color:var(--green)}
+.hero p{color:var(--muted);margin:.4em 0 0}
+.cat-tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px;margin:24px 0 8px}
+.cat-tiles a{display:flex;flex-direction:column;align-items:center;gap:4px;padding:18px 8px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);text-decoration:none;color:var(--ink);font-weight:700;transition:transform .15s}
+.cat-tiles a span{font-size:2rem}
+.cat-tiles a:hover{transform:translateY(-3px);border-color:var(--green)}
+
+/* lists */
+.section-title{font-size:1.2rem;margin:40px 0 16px;padding-left:12px;border-left:5px solid var(--accent)}
+.page-title{margin:36px 0 4px}
+.lead{color:var(--muted);margin-top:0}
+.post-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.post-card{display:block;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;text-decoration:none;color:var(--ink);transition:box-shadow .15s,transform .15s}
+.post-card:hover{box-shadow:0 6px 18px rgba(91,124,90,.15);transform:translateY(-2px)}
+.post-card h3{margin:.3em 0;font-size:1.05rem;line-height:1.5}
+.post-card p{margin:0;color:var(--muted);font-size:.88rem;line-height:1.6}
+.post-card time{display:block;margin-top:8px;font-size:.78rem;color:var(--muted)}
+.pc-cat{font-size:.78rem;background:var(--green-l);color:var(--green);padding:2px 10px;border-radius:999px}
+.empty{background:var(--paper);border:1px dashed var(--line);border-radius:var(--radius);padding:28px;text-align:center;color:var(--muted)}
+
+/* post */
+.post{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:28px 32px;margin-top:28px}
+@media (max-width:600px){.post{padding:20px 18px}}
+.breadcrumb{font-size:.8rem;color:var(--muted);margin:0}
+.breadcrumb a{color:var(--muted)}
+.pr-note{font-size:.8rem;color:var(--muted);background:var(--bg);border-radius:8px;padding:6px 12px;display:inline-block}
+.post h1{font-size:1.6rem;line-height:1.5;margin:.4em 0 .2em}
+.post>time{color:var(--muted);font-size:.85rem}
+.post-body h2{font-size:1.25rem;margin:2em 0 .6em;padding:8px 14px;background:var(--green-l);border-radius:10px}
+.post-body h3{font-size:1.08rem;margin:1.6em 0 .5em;padding-bottom:4px;border-bottom:2px dotted var(--accent)}
+.post-body ul,.post-body ol{padding-left:1.4em}
+.post-body blockquote{margin:1.2em 0;padding:10px 16px;background:var(--bg);border-left:4px solid var(--green);border-radius:6px}
+.post-body table{border-collapse:collapse;width:100%;font-size:.92rem;display:block;overflow-x:auto}
+.post-body th,.post-body td{border:1px solid var(--line);padding:8px 10px;text-align:left}
+.post-body th{background:var(--green-l)}
+
+/* product card */
+.product-card{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin:1.4em 0;padding:16px 20px;border:2px solid var(--line);border-radius:var(--radius);background:#fff}
+.pc-name{font-weight:700;flex:1 1 220px}
+.pc-btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:10px 22px;border-radius:999px;white-space:nowrap}
+.pc-btn:hover{filter:brightness(1.08)}
+
+/* footer */
+.site-footer{margin-top:60px;padding:28px 0;background:var(--paper);border-top:1px solid var(--line);text-align:center;font-size:.88rem}
+.site-footer a{color:var(--ink);margin:0 6px}
+.small{font-size:.75rem;color:var(--muted);margin:.4em 0}
