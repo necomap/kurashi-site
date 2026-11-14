@@ -43,7 +43,8 @@ const posts = fs.existsSync(path.join(root, 'content/posts'))
         slug, title: meta.title || slug, date: meta.date || '1970-01-01',
         category: catMap[meta.category] ? meta.category : cfg.categories[0].slug,
         description: meta.description || '', draft: meta.draft === 'true',
-        html: marked.parse(renderShortcodes(body)),
+        // 日本語の括弧直後でも太字が効くよう、**…** を先に<strong>へ変換
+        html: marked.parse(renderShortcodes(body).replace(/\*\*([^*\n]+?)\*\*/g, '<strong>$1</strong>')),
       };
     }).filter(p => !p.draft).sort((a, b) => b.date.localeCompare(a.date) || a.slug.localeCompare(b.slug))
   : [];
