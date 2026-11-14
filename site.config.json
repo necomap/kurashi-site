@@ -5,11 +5,41 @@
   "amazonTag": "luckeapp-22",
   "author": "くらし工房",
   "categories": [
-    { "slug": "cat", "name": "猫", "icon": "🐈", "desc": "猫と暮らすためのグッズ" },
-    { "slug": "chiikineko", "name": "地域猫", "icon": "🏘️", "desc": "地域猫活動・TNRに役立つ道具" },
-    { "slug": "plants", "name": "植物", "icon": "🌿", "desc": "観葉植物・園芸用品" },
-    { "slug": "aquarium", "name": "水槽", "icon": "🐟", "desc": "アクアリウム・水草・水槽用品" },
-    { "slug": "diy", "name": "DIY", "icon": "🔨", "desc": "工具・DIY用品" },
-    { "slug": "baking", "name": "製菓・製パン", "icon": "🍞", "desc": "お菓子・パンづくりの道具と材料" }
+    {
+      "slug": "cat",
+      "name": "猫",
+      "en": "CAT",
+      "desc": "猫と暮らすためのグッズ"
+    },
+    {
+      "slug": "chiikineko",
+      "name": "地域猫",
+      "en": "COMMUNITY CATS",
+      "desc": "地域猫活動・TNRに役立つ道具"
+    },
+    {
+      "slug": "plants",
+      "name": "植物",
+      "en": "PLANTS",
+      "desc": "観葉植物・園芸用品"
+    },
+    {
+      "slug": "aquarium",
+      "name": "水槽",
+      "en": "AQUARIUM",
+      "desc": "アクアリウム・水草・水槽用品"
+    },
+    {
+      "slug": "diy",
+      "name": "DIY",
+      "en": "DIY",
+      "desc": "工具・DIY用品"
+    },
+    {
+      "slug": "baking",
+      "name": "製菓・製パン",
+      "en": "BAKING",
+      "desc": "お菓子・パンづくりの道具と材料"
+    }
   ]
 }

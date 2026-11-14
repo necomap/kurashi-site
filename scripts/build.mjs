@@ -53,7 +53,7 @@ const posts = fs.existsSync(path.join(root, 'content/posts'))
 function layout({ title, description, body, pathName, type = 'website' }) {
   const fullTitle = title ? `${title}｜${cfg.siteName}` : `${cfg.siteName}｜${cfg.tagline}`;
   const url = cfg.siteUrl + pathName;
-  const nav = cfg.categories.map(c => `<a href="/category/${c.slug}/">${c.icon} ${esc(c.name)}</a>`).join('');
+  const nav = cfg.categories.map(c => `<a href="/category/${c.slug}/">${esc(c.name)}</a>`).join('');
   return `<!doctype html>
 <html lang="ja"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -64,13 +64,13 @@ function layout({ title, description, body, pathName, type = 'website' }) {
 <meta property="og:type" content="${type}"><meta property="og:url" content="${esc(url)}"><meta property="og:site_name" content="${esc(cfg.siteName)}">
 <meta name="twitter:card" content="summary">
 <link rel="alternate" type="application/rss+xml" title="${esc(cfg.siteName)}" href="/feed.xml">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
 </head><body>
 <header class="site-header"><div class="wrap">
-<a class="logo" href="/"><span class="logo-mark">🐾</span>${esc(cfg.siteName)}</a>
+<a class="logo" href="/">${esc(cfg.siteName)}</a>
 <p class="tagline">${esc(cfg.tagline)}</p>
 </div><nav class="cat-nav"><div class="wrap">${nav}</div></nav></header>
 <main class="wrap">${body}</main>
@@ -84,7 +84,7 @@ function layout({ title, description, body, pathName, type = 'website' }) {
 
 const card = p => {
   const c = catMap[p.category];
-  return `<a class="post-card" href="/posts/${p.slug}/"><span class="pc-cat">${c.icon} ${esc(c.name)}</span>
+  return `<a class="post-card" href="/posts/${p.slug}/"><span class="pc-cat">${esc(c.name)}</span>
 <h3>${esc(p.title)}</h3><p>${esc(p.description)}</p><time>${esc(p.date)}</time></a>`;
 };
 const list = arr => arr.length ? `<div class="post-grid">${arr.map(card).join('')}</div>` : `<p class="empty">記事を準備中です。もうしばらくお待ちください。</p>`;
@@ -100,7 +100,7 @@ const pages = [];
 // トップ
 write('index.html', layout({ pathName: '/', body: `
 <section class="hero"><h1>${esc(cfg.siteName)}</h1><p>${esc(cfg.tagline)}</p></section>
-<section class="cat-tiles">${cfg.categories.map(c => `<a href="/category/${c.slug}/"><span>${c.icon}</span>${esc(c.name)}</a>`).join('')}</section>
+<section class="cat-tiles">${cfg.categories.map(c => `<a href="/category/${c.slug}/"><span class="tile-en">${esc(c.en)}</span>${esc(c.name)}</a>`).join('')}</section>
 <h2 class="section-title">新着記事</h2>${list(posts.slice(0, 12))}` }));
 pages.push('/');
 
@@ -108,7 +108,7 @@ pages.push('/');
 for (const c of cfg.categories) {
   const arr = posts.filter(p => p.category === c.slug);
   write(`category/${c.slug}/index.html`, layout({ title: c.name, description: c.desc, pathName: `/category/${c.slug}/`,
-    body: `<h1 class="page-title">${c.icon} ${esc(c.name)}</h1><p class="lead">${esc(c.desc)}</p>${list(arr)}` }));
+    body: `<p class="page-en">${esc(c.en)}</p><h1 class="page-title">${esc(c.name)}</h1><p class="lead">${esc(c.desc)}</p>${list(arr)}` }));
   pages.push(`/category/${c.slug}/`);
 }
 
