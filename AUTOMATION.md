@@ -19,7 +19,7 @@
 ---
 title: 32文字前後の記事タイトル（商品ジャンル＋悩み・ベネフィット）
 date: YYYY-MM-DD
-category: cat / chiikineko / plants / aquarium / diy / baking のどれか
+category: cat / chiikineko / plants / aquarium / diy / baking / life のどれか
 description: 80〜110文字の要約（検索結果に出る文）
 ---
 

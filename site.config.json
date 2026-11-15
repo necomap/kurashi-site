@@ -1,6 +1,6 @@
 {
   "siteName": "ねこと緑のくらし工房",
-  "tagline": "猫・植物・水槽・DIY・お菓子づくり。小さな暮らしを楽しくする道具たち",
+  "tagline": "猫・植物・水槽・DIY・お菓子づくり・毎日のくらし。小さな暮らしを楽しくする道具たち",
   "siteUrl": "https://kurashi.lucke.jp",
   "amazonTag": "luckeapp-22",
   "author": "くらし工房",
@@ -40,6 +40,12 @@
       "name": "製菓・製パン",
       "en": "BAKING",
       "desc": "お菓子・パンづくりの道具と材料"
+    },
+    {
+      "slug": "life",
+      "name": "くらし",
+      "en": "LIFE",
+      "desc": "食べもの・旅・毎日の便利な道具"
     }
   ]
 }
