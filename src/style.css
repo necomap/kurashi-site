@@ -70,3 +70,11 @@ img{max-width:100%;height:auto}
 .site-footer{margin-top:60px;padding:28px 0;background:var(--paper);border-top:1px solid var(--line);text-align:center;font-size:.88rem}
 .site-footer a{color:var(--ink);margin:0 6px}
 .small{font-size:.75rem;color:var(--muted);margin:.4em 0}
+
+/* photos */
+.post-body img{display:block;max-width:100%;height:auto;margin:1.2em auto .3em;border-radius:12px}
+.post-body .photo-caption{text-align:center;font-size:.82rem;color:var(--muted);margin:0 0 1.4em}
+.post-body .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin:1.2em 0}
+.post-body .gallery figure{margin:0}
+.post-body .gallery img{margin:0;aspect-ratio:4/3;object-fit:cover;width:100%}
+.post-body .gallery figcaption{font-size:.78rem;color:var(--muted);text-align:center;margin-top:4px}
