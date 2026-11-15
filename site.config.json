@@ -47,5 +47,46 @@
       "en": "LIFE",
       "desc": "食べもの・旅・毎日の便利な道具"
     }
+  ],
+  "appsPage": "https://toolbox.lucke.jp/apps",
+  "apps": [
+    {
+      "name": "NekoMap",
+      "desc": "地域猫のナワバリ・目撃情報・TNR記録を地図でみんなと共有できるアプリ。",
+      "url": "https://nekomap.lucke.jp",
+      "cats": [
+        "chiikineko",
+        "cat"
+      ],
+      "home": true
+    },
+    {
+      "name": "たすけてグリーン",
+      "desc": "写真や環境データから、AIが植物の健康状態を診断。観葉植物から家庭菜園まで。",
+      "url": "https://sosgreen.lucke.jp",
+      "cats": [
+        "plants",
+        "aquarium"
+      ],
+      "home": true
+    },
+    {
+      "name": "HACCP管理システム",
+      "desc": "飲食店・菓子店・パン屋向けの衛生管理（HACCP）記録システム。",
+      "url": "https://haccp.lucke.jp",
+      "cats": [
+        "baking"
+      ],
+      "home": false
+    },
+    {
+      "name": "FoodLabel Pro",
+      "desc": "レシピ登録から、アレルゲン判定・栄養成分計算・食品表示ラベルの印刷までまとめて管理。",
+      "url": "https://foodlabel.lucke.jp",
+      "cats": [
+        "baking"
+      ],
+      "home": false
+    }
   ]
 }

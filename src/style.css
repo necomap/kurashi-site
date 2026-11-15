@@ -78,3 +78,12 @@ img{max-width:100%;height:auto}
 .post-body .gallery figure{margin:0}
 .post-body .gallery img{margin:0;aspect-ratio:4/3;object-fit:cover;width:100%}
 .post-body .gallery figcaption{font-size:.78rem;color:var(--muted);text-align:center;margin-top:4px}
+
+/* 運営者のアプリ */
+.app-box{margin:36px 0 8px;padding:18px 20px;background:var(--green-l);border-radius:var(--radius)}
+.app-box-title{margin:0 0 10px;font-weight:700;font-size:.95rem;color:var(--green)}
+.app-item{display:block;padding:12px 14px;margin-bottom:8px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);text-decoration:none;color:var(--ink)}
+.app-item:hover{border-color:var(--green)}
+.app-name{display:block;font-weight:700}
+.app-desc{display:block;font-size:.88rem;color:var(--muted);margin-top:2px}
+.app-more{margin:6px 0 0;font-size:.85rem;text-align:right}

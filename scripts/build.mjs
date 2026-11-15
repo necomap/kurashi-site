@@ -75,7 +75,7 @@ function layout({ title, description, body, pathName, type = 'website' }) {
 </div><nav class="cat-nav"><div class="wrap">${nav}</div></nav></header>
 <main class="wrap">${body}</main>
 <footer class="site-footer"><div class="wrap">
-<p><a href="/about/">このサイトについて</a>　<a href="/privacy/">プライバシーポリシー・免責事項</a></p>
+<p><a href="/about/">このサイトについて</a>　<a href="/privacy/">プライバシーポリシー・免責事項</a>${cfg.appsPage ? `　<a href="${esc(cfg.appsPage)}" target="_blank" rel="noopener">運営者のアプリ</a>` : ''}</p>
 <p class="small">Amazonのアソシエイトとして、${esc(cfg.siteName)}は適格販売により収入を得ています。</p>
 <p class="small">© ${new Date().getFullYear()} ${esc(cfg.siteName)}</p>
 </div></footer>
@@ -87,6 +87,11 @@ const card = p => {
   return `<a class="post-card" href="/posts/${p.slug}/"><span class="pc-cat">${esc(c.name)}</span>
 <h3>${esc(p.title)}</h3><p>${esc(p.description)}</p><time>${esc(p.date)}</time></a>`;
 };
+// 運営者のアプリ紹介
+const apps = cfg.apps || [];
+const appBox = arr => arr.length ? `<aside class="app-box"><p class="app-box-title">運営者が作ったアプリ</p>${arr.map(a =>
+  `<a class="app-item" href="${esc(a.url)}" target="_blank" rel="noopener"><span class="app-name">${esc(a.name)}</span><span class="app-desc">${esc(a.desc)}</span></a>`).join('')}
+<p class="app-more"><a href="${esc(cfg.appsPage)}" target="_blank" rel="noopener">ほかのアプリも見る</a></p></aside>` : '';
 const list = arr => arr.length ? `<div class="post-grid">${arr.map(card).join('')}</div>` : `<p class="empty">記事を準備中です。もうしばらくお待ちください。</p>`;
 
 // ---------- 出力 ----------
@@ -101,7 +106,8 @@ const pages = [];
 write('index.html', layout({ pathName: '/', body: `
 <section class="hero"><h1>${esc(cfg.siteName)}</h1><p>${esc(cfg.tagline)}</p></section>
 <section class="cat-tiles">${cfg.categories.map(c => `<a href="/category/${c.slug}/"><span class="tile-en">${esc(c.en)}</span>${esc(c.name)}</a>`).join('')}</section>
-<h2 class="section-title">新着記事</h2>${list(posts.slice(0, 12))}` }));
+<h2 class="section-title">新着記事</h2>${list(posts.slice(0, 12))}
+${appBox(apps.filter(a => a.home))}` }));
 pages.push('/');
 
 // カテゴリ
@@ -123,6 +129,7 @@ for (const p of posts) {
 <h1>${esc(p.title)}</h1><time>${esc(p.date)}</time>
 <div class="post-body">${p.html}</div>
 </article>
+${appBox(apps.filter(a => (a.cats || []).includes(p.category)))}
 ${related.length ? `<h2 class="section-title">${esc(c.name)}の関連記事</h2>${list(related)}` : ''}` }));
   pages.push(`/posts/${p.slug}/`);
 }
@@ -131,7 +138,8 @@ ${related.length ? `<h2 class="section-title">${esc(c.name)}の関連記事</h2>
 write('about/index.html', layout({ title: 'このサイトについて', pathName: '/about/', body: `<article class="post"><h1>このサイトについて</h1><div class="post-body">
 <p>「${esc(cfg.siteName)}」は、猫・地域猫・植物・水槽・DIY・製菓製パンなど、暮らしを楽しくする道具を紹介するサイトです。</p>
 <p>実際に使っているもの・気になっているものを中心に、選び方のポイントや使い方のコツをまとめています。</p>
-<p>記事の作成にはAIによる下書き支援を利用しています。紹介する商品は運営者が選んでいます。</p></div></article>` }));
+<p>記事の作成にはAIによる下書き支援を利用しています。紹介する商品は運営者が選んでいます。</p>
+<p>運営者は、地域猫の情報を共有する「NekoMap」や植物の健康状態を診断する「たすけてグリーン」など、お店の業務や毎日のくらしに役立つアプリも作っています。<a href="${esc(cfg.appsPage)}" target="_blank" rel="noopener">アプリの一覧はこちら</a>。</p></div></article>` }));
 write('privacy/index.html', layout({ title: 'プライバシーポリシー・免責事項', pathName: '/privacy/', body: `<article class="post"><h1>プライバシーポリシー・免責事項</h1><div class="post-body">
 <h2>広告について</h2><p>当サイトは、Amazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイトプログラムである、Amazonアソシエイト・プログラムの参加者です。</p>
 <p>Amazonのアソシエイトとして、${esc(cfg.siteName)}は適格販売により収入を得ています。</p>
