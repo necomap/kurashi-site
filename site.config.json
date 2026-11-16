@@ -87,6 +87,33 @@
         "baking"
       ],
       "home": false
+    },
+    {
+      "name": "テイクアウト予約",
+      "desc": "店頭払いのテイクアウト予約ページを、かんたんな設定で自店専用に公開。",
+      "url": "https://reserve.lucke.jp",
+      "cats": [
+        "baking"
+      ],
+      "home": false
+    },
+    {
+      "name": "Lucke Inventory",
+      "desc": "在庫管理と棚卸しをスマートに。店舗・事業所の在庫を一元管理。",
+      "url": "https://inventory.lucke.jp",
+      "cats": [
+        "baking"
+      ],
+      "home": false
+    },
+    {
+      "name": "複式簿記 記録ツール",
+      "desc": "複式簿記の記帳をサポートするツール。",
+      "url": "https://boki.lucke.jp",
+      "cats": [
+        "baking"
+      ],
+      "home": false
     }
   ]
 }
