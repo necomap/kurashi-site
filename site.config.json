@@ -71,6 +71,16 @@
       "home": true
     },
     {
+      "name": "個人事業主の道具箱",
+      "desc": "源泉徴収の逆算、請求書・見積書、家事按分、減価償却、ふるさと納税の上限など、個人事業主の計算や書類づくりに使えるツール集。",
+      "url": "https://toolbox.lucke.jp",
+      "cats": [
+        "baking",
+        "life"
+      ],
+      "home": true
+    },
+    {
       "name": "HACCP管理システム",
       "desc": "飲食店・菓子店・パン屋向けの衛生管理（HACCP）記録システム。",
       "url": "https://haccp.lucke.jp",
